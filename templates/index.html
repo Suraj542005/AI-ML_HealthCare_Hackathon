@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DetectionX</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <img src="static/logo.jpg" alt="Logo" id="logo">
+        <div class="header-titles">
+            <h1>DetectionX</h1>
+            <h2>Real-Time Object Detection</h2>
+        </div>
+        <div class="dropdown">
+            <button class="dropdown-button">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 6H21V8H3V6ZM3 11H21V13H3V11ZM3 16H21V18H3V16Z" fill="white"/>
+                </svg>
+            </button>
+            <div class="dropdown-content">
+                <a href="#homeSection">Home</a>
+                <a href="#exploreSection">Explore</a>
+                <a href="#helpSection">Help</a>
+                <a href="#supportSection">Support</a>
+            </div>
+        </div>
+    </header>
+    <main id="content">
+        <section id="homeSection">
+            <div class="image-collage">
+                <img src="https://th.bing.com/th/id/OIP.2mCDJbxLqeGldNCrTuXxvQHaE-?rs=1&pid=ImgDetMain" alt="Image 1">
+                <img src="https://infotech.report/Images/Resources/f54e1b5b-de98-4e12-9f6f-4939194047e8_Resources_Real-time-Object.jpg" alt="Image 2">
+                <img src="https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2018/12/Screenshot-from-2018-11-29-13-03-17.png" alt="Image 3">
+            </div>
+            <div class="description">
+                <h2>About Real-Time Object Detection</h2>
+                <p>Real-time object detection involves using algorithms and models, such as YOLO (You Only Look Once), to identify and locate objects within video frames instantly. This technology is applied in various fields such as surveillance, autonomous driving, and robotics to enhance decision-making processes and improve safety and efficiency.</p>
+            </div>
+            <!-- <button id="openCameraButton">Open Camera</button> -->
+            <img id="video" src="{{ url_for('video_feed') }}">
+            <video id="cameraStream" width="640" height="480" autoplay style="display: none;"></video>
+        </section>
+        <section id="exploreSection">
+            <h1>Explore YOLO</h1>
+            <p>YOLO (You Only Look Once) is a state-of-the-art, real-time object detection system...</p>
+            <div class="image-collage">
+                <img src="https://i.ytimg.com/vi/_h8HwGFP0Bk/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYACpAWKAgwIABABGGUgWShTMA8=&rs=AOn4CLD5RorzVXfno-hbESEfSMbo-MvGkQ" alt="Image 4">
+                <img src="https://neptune.ai/wp-content/uploads/YOLOv5-vs-YOLOv6.png" alt="Image 5">
+                <img src="https://editor.analyticsvidhya.com/uploads/83063yolo_objectdetection3.jpg" alt="Image 6">
+            </div>
+        </section>
+        <section id="helpSection">
+            <h1>Help</h1>
+            <p>If you need any assistance with using our real-time object detection system, please refer to the documentation or contact our support team.</p>
+        </section>
+        <section id="supportSection">
+            <h1>Support</h1>
+            <p>For support inquiries, please reach out to our support team via email or phone. We are here to assist you with any questions or issues you may have.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 DetectionX. All rights reserved.</p>
+    </footer>
+    <script>
+        document.getElementById('openCameraButton').addEventListener('click', function() {
+            var video = document.getElementById('cameraStream');
+            video.style.display = 'block';
+            video.src = '/video_feed';
+        });
+    </script>
+</body>
+</html>
